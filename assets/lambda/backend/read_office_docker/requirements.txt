@@ -8,5 +8,5 @@ s3fs
 networkx
 pandas
 openpyxl
-langchain==0.2.14
+langchain==0.3.0
 langchain-community==0.2.12
