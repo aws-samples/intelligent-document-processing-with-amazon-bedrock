@@ -9,4 +9,4 @@ networkx
 pandas
 openpyxl
 langchain==0.2.14
-langchain-community==0.2.12
+langchain-community==0.3.0
