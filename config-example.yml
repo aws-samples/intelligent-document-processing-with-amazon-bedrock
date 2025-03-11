@@ -57,7 +57,7 @@ authentication:               # Authentication settings for the Streamlit fronte
   MFA: False                  # Set to True/False to enable/disable multi-factor authentication
   access_token_validity: 720  # Time until access token expires and a user is logged out (in minutes)
   users:                      # List of user emails to be created in Cognito with the access to the web app
-    - kozodoi@amazon.de
+    - XXX@XXX.com
 
 streamlit:
   deploy_streamlit: True         # Whether to deploy Streamlit frontend on ECS
