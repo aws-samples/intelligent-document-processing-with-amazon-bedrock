@@ -7,7 +7,6 @@ WORKDIR /app
 RUN apt-get update -y && apt-get install --no-install-recommends -y \
     build-essential \
     curl \
-    software-properties-common \
     git \
     && rm -rf /var/lib/apt/lists/*
 
