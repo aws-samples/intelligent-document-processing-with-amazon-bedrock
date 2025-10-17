@@ -37,13 +37,12 @@ MODEL_IDS = {
     "Claude 3.5 Sonnet (V2)": "anthropic.claude-3-5-sonnet-20241022-v2:0",
     "Claude 3.7 Sonnet": "anthropic.claude-3-7-sonnet-20250219-v1:0",
     "Claude 4 Sonnet": "anthropic.claude-sonnet-4-20250514-v1:0",
+    "Claude 4.5 Sonnet": "anthropic.claude-sonnet-4-5-20250929-v1:0",
     "Claude 4 Opus": "anthropic.claude-opus-4-20250514-v1:0",
     "Claude 4.1 Opus": "anthropic.claude-opus-4-1-20250805-v1:0",
-    # OpenAI Models
-    "GPT OSS-120B": "openai.gpt-oss-120b-1:0",
-    "GPT OSS-20B": "openai.gpt-oss-20b-1:0",
     # DeepSeek Models
     "DeepSeek-R1": "deepseek.r1-v1:0",
+    "DeepSeek 3.1": "deepseek.v3-v1:0",
     # Cohere Models
     "Command": "cohere.command-text-v14",
     "Command Light": "cohere.command-light-text-v14",
@@ -73,6 +72,14 @@ MODEL_IDS = {
     "Mistral Large": "mistral.mistral-large-2402-v1:0",
     "Mistral Large 2": "mistral.mistral-large-2407-v1:0",
     "Mistral Small": "mistral.mistral-small-2402-v1:0",
+    # OpenAI Models
+    "GPT OSS-120B": "openai.gpt-oss-120b-1:0",
+    "GPT OSS-20B": "openai.gpt-oss-20b-1:0",
+    # Qwen Models
+    "Qwen 3 Coder 30B-A3B": "qwen.qwen3-coder-30b-a3b-v1:",
+    "Qwen 3 32B": "qwen.qwen3-32b-v1:0",
+    "Qwen 3 235B-A22B": "qwen.qwen3-235b-a22b-2507-v1:0",
+    "Qwen 3 Coder 480B-A35B": "qwen.qwen3-coder-480b-a35b-v1:0",
     # Writer Models
     "Palmyra X4": "writer.palmyra-x4-v1:0",
     "Palmyra X5": "writer.palmyra-x5-v1:0",
@@ -89,7 +96,7 @@ def get_model_names(bedrock_model_ids: list[str]) -> Dict[str, str]:
     # Create new dictionary ordered by bedrock_model_ids sequence
     result = {}
     for model_id in bedrock_model_ids:
-        if model_id.startswith(("us.", "eu.")):
+        if model_id.startswith(("global.", "us.", "eu.")):
             base_id = model_id.split(".", 1)[1]
         else:
             base_id = model_id
