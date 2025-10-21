@@ -23,6 +23,7 @@ This repository provides an AWS CDK solution for intelligent document processing
 ## Contents
 
 - [📹 Demo](#demo)
+- [📄 Document Processing Capabilities](#document-processing-capabilities)
 - [🏗️ Architecture](#architecture)
 - [🔧 Deployment](#deployment)
   - [1. Clone Repository](#1-clone-repository)
@@ -64,6 +65,68 @@ run_idp_bedrock_api(documents=docs, features=features)
 **Web Interface**
 
 https://github.com/user-attachments/assets/cac8a6e1-2e70-4ca0-a9e7-d959619941f4
+
+## 📄 Document Processing Capabilities
+
+### Multi-Page PDF Handling
+
+The solution provides robust support for multi-page PDFs with different capabilities depending on the parsing mode:
+
+**Amazon Bedrock Data Automation (BDA)**
+- Supports PDF documents up to **20 pages maximum**
+- Direct multimodal processing without chunking
+- Only PDF format supported
+- Recommended for shorter documents requiring high accuracy
+
+**Amazon Bedrock LLM (Vision Models)**
+- **No hard page limit** - automatically chunks large documents
+- Default chunk size: **20 pages** (configurable)
+- Intelligent parallel or sequential processing of chunks
+- PDF pages converted to JPEG images for vision model analysis
+- Responses from individual chunks are automatically combined
+- Supports concurrent processing of up to 10 chunks
+- Recommended for longer documents and flexible processing
+
+**Amazon Textract**
+- Full multi-page document support
+- Preserves layout and document structure
+- Intelligent table extraction across multiple pages
+- Tables spanning pages are automatically merged
+- Configurable options to hide headers, footers, and page numbers
+
+### Bulk PDF Upload
+
+The system fully supports bulk document processing with the following capabilities:
+
+**Upload Limits**
+- Up to **50 documents per batch**
+- Maximum document size: **500,000 characters**
+- Maximum attributes to extract: **50**
+- Supported formats: PDF, DOCX, DOC, PPT, PPTX, XLS, XLSX, TXT, PNG, JPG, JPEG, TIFF, HTML, HTM, MD, CSV
+
+**Processing Features**
+- **Asynchronous parallel uploads** with real-time progress tracking
+- All documents uploaded concurrently to S3 with presigned URLs
+- **Parallel document processing** via AWS Step Functions orchestration
+- Each document processed independently for maximum throughput
+- Results aggregated and returned together
+- Comprehensive error handling with chunk-level recovery
+
+**Performance**
+- Concurrent upload of all documents in batch
+- Up to 10 parallel workers for PDF chunk processing
+- Automatic load balancing across processing resources
+- Real-time status updates for all documents
+
+### Supported File Formats by Parser
+
+| Format | Bedrock Data Automation | Bedrock LLM (Vision) | Textract |
+|--------|------------------------|---------------------|----------|
+| PDF | ✅ (≤20 pages) | ✅ (unlimited, chunked) | ✅ |
+| PNG, JPG, JPEG | ❌ | ✅ | ✅ |
+| DOCX, DOC, PPT, PPTX | ❌ | ❌ | ✅ |
+| XLS, XLSX, CSV | ❌ | ❌ | ✅ |
+| TXT, HTML, MD | ❌ | ❌ | ✅ |
 
 ## 🏗️ Architecture
 
