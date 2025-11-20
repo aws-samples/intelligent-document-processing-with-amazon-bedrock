@@ -24,9 +24,9 @@ See the **Security** section below before deployment.
 
 ## Contents
 
-- [📹 Demo](#demo)
-- [🏗️ Architecture](#architecture)
-- [🔧 Deployment](#deployment)
+- [📹 Demo](#-demo)
+- [🏗️ Architecture](#️-architecture)
+- [🔧 Deployment](#-deployment)
   - [1. Clone Repository](#1-clone-repository)
   - [2. Install Prerequisites](#2-install-prerequisites)
   - [3. Setup Environment](#3-setup-environment)
@@ -34,14 +34,14 @@ See the **Security** section below before deployment.
   - [5. Enable Bedrock Models](#5-enable-bedrock-models)
   - [6. Bootstrap CDK](#6-bootstrap-cdk)
   - [7. Deploy Stack](#7-deploy-stack)
-- [💻 Usage](#usage)
+- [💻 Usage](#-usage)
   - [1. Python API](#1-python-api)
   - [2. Web Application](#2-web-application)
   - [3. MCP Integration](#3-mcp-integration)
-- [👥 Team](#team)
-- [🤝 Contributing](#contributing)
-- [🔒️ Security](#security)
-- [📝 License](#license)
+- [👥 Team](#-team)
+- [🤝 Contributing](#-contributing)
+- [🔒️ Security](#️-security)
+- [📝 License](#-license)
 
 ## 📹 Demo
 
@@ -166,7 +166,7 @@ We offer three ways to interact with the IDP solution, including API calls, web 
 
 ### 1. Python API
 
-Follow the [demo notebook](api/idp_bedrock_demo.ipynb) to process documents programmatically:
+Follow the [demo notebook](demo/idp_bedrock_demo.ipynb) to process documents programmatically:
 - Provide input documents
 - Define attributes to extract
 
