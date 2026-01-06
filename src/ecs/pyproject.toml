@@ -17,7 +17,7 @@ dependencies = [
     "rel==0.4.9.5",
     "pandas==2.2.0",
     "qrcode==7.4.2",
-    "aiohttp==3.12.14",
+    "aiohttp==3.13.3",
 ]
 
 [project.optional-dependencies]
