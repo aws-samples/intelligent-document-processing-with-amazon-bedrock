@@ -16,7 +16,7 @@ This repository provides an AWS CDK solution for intelligent document processing
   - Numeric scores (sentiment, urgency, etc.)
   - Free-form content (summaries, responses, etc.)
 - Simply describe attributes to extract without data annotation or model training
-- Leverage Amazon Bedrock Data Automation and multi-modal LLMs
+- Leverage Amazon Bedrock Data Automation and multi-modal LLMs (including VLMs for complex diagrams)
 - Process PDFs, MS Office files, images, and text via [Python API](demo/idp_bedrock_demo.ipynb) or [web interface](src/ecs/src/Home.py)
 - Deploy as MCP server to equip AI agents with document processing capabilities
 
