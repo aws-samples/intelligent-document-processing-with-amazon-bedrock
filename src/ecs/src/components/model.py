@@ -74,6 +74,12 @@ MODEL_IDS = {
     "Mistral Large": "mistral.mistral-large-2402-v1:0",
     "Mistral Large 2": "mistral.mistral-large-2407-v1:0",
     "Mistral Small": "mistral.mistral-small-2402-v1:0",
+    # Nvidia AI Models
+    "NVIDIA Nemotron Nano 8B NIM": "nvidia.nemotron-nano-8b-nim",
+    "NVIDIA Nemotron Nano 9B v2": "nvidia.nemotron-nano-9b-v2",
+    "NVIDIA Nemotron 4 15B NIM": "nvidia.nemotron-4-15b-nim",
+    "NVIDIA Nemotron Super 49B NIM": "nvidia.nemotron-super-49b-nim",
+    "NVIDIA Nemotron Nano 12B v2 VL BF16": "nvidia.nemotron-nano-12b-v2",
     # OpenAI Models
     "GPT OSS-120B": "openai.gpt-oss-120b-1:0",
     "GPT OSS-20B": "openai.gpt-oss-20b-1:0",
@@ -81,6 +87,7 @@ MODEL_IDS = {
     "Qwen 3 Coder 30B-A3B": "qwen.qwen3-coder-30b-a3b-v1:",
     "Qwen 3 32B": "qwen.qwen3-32b-v1:0",
     "Qwen 3 235B-A22B": "qwen.qwen3-235b-a22b-2507-v1:0",
+    "Qwen 3 VL 235B-A22B": "qwen.qwen3-vl-235b-a22b",
     "Qwen 3 Coder 480B-A35B": "qwen.qwen3-coder-480b-a35b-v1:0",
     # Writer Models
     "Palmyra X4": "writer.palmyra-x4-v1:0",
