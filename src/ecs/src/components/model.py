@@ -13,7 +13,8 @@ MODEL_IDS = {
     "Jamba 1.5 Mini": "ai21.jamba-1-5-mini-v1:0",
     # Amazon Models
     "Nova Micro": "amazon.nova-micro-v1:0",
-    "Nova Lite": "amazon.nova-lite-v1:0",
+    "Nova Lite": "amazon.nova-2-lite-v1:0",
+    "Nova 2 Lite": "amazon.nova-lite-v1:0",
     "Nova Pro": "amazon.nova-pro-v1:0",
     "Nova Premier": "amazon.nova-premier-v1:0",
     "Titan Text Express": "amazon.titan-text-express-v1",
