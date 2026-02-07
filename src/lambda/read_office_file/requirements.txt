@@ -7,6 +7,6 @@ s3fs
 networkx
 pandas
 openpyxl
-unstructured==0.17.2
+unstructured==0.18.18
 langchain==0.3.26
 langchain-community==0.3.27
