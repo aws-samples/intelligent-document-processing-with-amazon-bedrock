@@ -1,4 +1,4 @@
-griptape==1.3.4
+griptape==1.9.4
 anthropic==0.54.0
-boto3==1.38.36
+boto3==1.42.70
 s3fs

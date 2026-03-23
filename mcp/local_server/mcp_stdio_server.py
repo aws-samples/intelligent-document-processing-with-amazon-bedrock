@@ -5,14 +5,14 @@ Exposes document attribute extraction via MCP protocol over stdio transport usin
 """
 
 import json
-import time
-import boto3
 import os
 import sys
+import time
 import uuid
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Union
 
+import boto3
 from fastmcp import FastMCP
 
 # Initialize FastMCP server
@@ -107,6 +107,8 @@ def get_configuration():
 STATE_MACHINE_ARN, BUCKET_NAME = get_configuration()
 
 SUPPORTED_MODELS = [
+    "us.anthropic.claude-opus-4-6-v1",
+    "us.anthropic.claude-sonnet-4-6",
     "us.anthropic.claude-opus-4-1-20250805-v1:0",
     "us.anthropic.claude-sonnet-4-20250514-v1:0",
     "us.anthropic.claude-3-7-sonnet-20250219-v1:0",
@@ -305,8 +307,9 @@ def download_from_presigned_url(presigned_url: str, bucket_name: str) -> str:
     Raises:
         Exception: If download or upload fails
     """
-    import requests
     from urllib.parse import urlparse
+
+    import requests
 
     if not bucket_name:
         raise Exception("S3 bucket not configured. Cannot process presigned URLs.")

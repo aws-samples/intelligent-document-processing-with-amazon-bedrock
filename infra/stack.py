@@ -15,6 +15,7 @@ from aws_cdk import aws_kms as kms
 from aws_cdk import aws_lambda as _lambda
 from aws_cdk import aws_s3 as _s3
 from aws_cdk import aws_ssm as ssm
+from cdk_nag import NagPackSuppression, NagSuppressions
 from constructs import Construct
 
 from infra.constructs.api import IDPBedrockAPIConstructs
@@ -65,6 +66,8 @@ class IDPBedrockStack(Stack):
             self._runtime = _lambda.Runtime.PYTHON_3_12
         elif python_runtime == "PYTHON_3_13":
             self._runtime = _lambda.Runtime.PYTHON_3_13
+        elif python_runtime == "PYTHON_3_14":
+            self._runtime = _lambda.Runtime.PYTHON_3_14
         else:
             raise RuntimeError("Select a Python version >= PYTHON_3_9")
 
@@ -283,6 +286,18 @@ class IDPBedrockStack(Stack):
                 client_id=self.cognito_authn.client_id,
                 cloudfront_domain=self.streamlit_constructs.cloudfront.domain_name,
             )
+
+        # suppress AwsSolutions-L1 on the shared provider framework Lambda
+        NagSuppressions.add_stack_suppressions(
+            self,
+            [
+                NagPackSuppression(
+                    id="AwsSolutions-L1",
+                    reason="Runtime for AWS Custom Resource provider framework Lambda is managed by CDK.",
+                )
+            ],
+            apply_to_nested_stacks=True,
+        )
 
         ## **************** Tags ****************
         Tags.of(self).add("StackName", stack_name)
