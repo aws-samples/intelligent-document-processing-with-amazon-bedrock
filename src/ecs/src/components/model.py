@@ -13,8 +13,8 @@ MODEL_IDS = {
     "Jamba 1.5 Mini": "ai21.jamba-1-5-mini-v1:0",
     # Amazon Models
     "Nova Micro": "amazon.nova-micro-v1:0",
-    "Nova Lite": "amazon.nova-2-lite-v1:0",
-    "Nova 2 Lite": "amazon.nova-lite-v1:0",
+    "Nova Lite": "amazon.nova-lite-v1:0",
+    "Nova 2 Lite": "amazon.nova-2-lite-v1:0",
     "Nova Pro": "amazon.nova-pro-v1:0",
     "Nova Premier": "amazon.nova-premier-v1:0",
     "Titan Text Express": "amazon.titan-text-express-v1",
@@ -39,10 +39,12 @@ MODEL_IDS = {
     "Claude 3.7 Sonnet": "anthropic.claude-3-7-sonnet-20250219-v1:0",
     "Claude 4 Sonnet": "anthropic.claude-sonnet-4-20250514-v1:0",
     "Claude 4.5 Sonnet": "anthropic.claude-sonnet-4-5-20250929-v1:0",
+    "Claude 4.6 Sonnet": "anthropic.claude-sonnet-4-6",
     "Claude 3 Opus": "anthropic.claude-3-opus-20240229-v1:0",
     "Claude 4 Opus": "anthropic.claude-opus-4-20250514-v1:0",
     "Claude 4.1 Opus": "anthropic.claude-opus-4-1-20250805-v1:0",
     "Claude 4.5 Opus": "anthropic.claude-opus-4-5-20251101-v1:0",
+    "Claude 4.6 Opus": "anthropic.claude-opus-4-6-v1",
     # DeepSeek Models
     "DeepSeek-R1": "deepseek.r1-v1:0",
     "DeepSeek 3.1": "deepseek.v3-v1:0",
