@@ -2,16 +2,16 @@
 Copyright © Amazon.com and Affiliates
 """
 
-import boto3
-
-import logging
-import time
-import random
-import os
-from botocore.exceptions import ClientError
-import botocore
 import copy
+import logging
+import os
+import random
+import time
 from typing import Any, Union
+
+import boto3
+import botocore
+from botocore.exceptions import ClientError
 
 LOGGER = logging.getLogger("CallBedrock")
 logging.basicConfig(level=logging.INFO)
@@ -38,7 +38,6 @@ def create_bedrock_client(bedrock_region, bedrock_config=None):
 def get_model_params() -> dict:
     return {
         "temperature": 0.0,  # temperature of the sampling process
-        "topP": 1,  # cumulative probability of sampled tokens
         "stopSequences": [],  # words after which the generation is stopped
         "maxTokens": 4_096,  # max tokens to be generated
     }
@@ -52,7 +51,6 @@ def generate_conversation(
     logger: logging.Logger = LOGGER,
     temperature: float = 0.0,
     top_k: int = 200,
-    top_p: float = 1.0,
     thinking_budget: int = 0,
     retry_model_id: str = "anthropic.claude-3-5-sonnet-20240620-v1:0",
 ):
@@ -73,7 +71,6 @@ def generate_conversation(
     # Get base inference parameters and customize them
     inference_config = get_model_params()
     inference_config["temperature"] = temperature
-    inference_config["topP"] = top_p
 
     # Additional inference parameters to use
     additional_model_fields: dict[str, Any] = {}
@@ -86,8 +83,6 @@ def generate_conversation(
         }
         # temperature must be set to 1 when thinking is enabled
         inference_config["temperature"] = 1.0
-        if "topP" in inference_config:
-            del inference_config["topP"]
     start_time = time.time()
 
     # Send the message
@@ -159,7 +154,6 @@ def call_bedrock(
     bedrock_client: Union[Any, None] = None,
     temperature: float = 0.0,
     top_k: int = 200,
-    top_p: float = 1.0,
     thinking_budget: int = 0,
     logger: logging.Logger = LOGGER,
 ):
@@ -174,7 +168,6 @@ def call_bedrock(
         bedrock_client (boto3.client, optional): Existing Bedrock client. Defaults to None.
         temperature (float, optional): Sampling temperature. Defaults to 0.0.
         top_k (int, optional): Top-k sampling parameter. Defaults to 200.
-        top_p (float, optional): Top-p sampling parameter. Defaults to 1.0.
         thinking_budget (int, optional): Thinking budget for Claude 3.7. Defaults to 0.
         logger (logging.Logger, optional): Logger to use. Defaults to LOGGER.
     """
@@ -209,7 +202,6 @@ def call_bedrock(
             messages=messages,
             temperature=temperature,
             top_k=top_k,
-            top_p=top_p,
             logger=logger,
             thinking_budget=thinking_budget,
         )

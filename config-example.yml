@@ -6,7 +6,7 @@ stack_region: us-east-1  # Region where the CloudFormation stack will be deploye
 
 lambda:
   architecture: X86_64         # The system architectures compatible with the Lambda functions X86_64 or ARM_64
-  python_runtime: PYTHON_3_13  # Python runtime for Lambda function
+  python_runtime: PYTHON_3_14  # Python runtime for Lambda function
 
 s3:
   use_existing_bucket: False   # Use an existing bucket, otherwise create a new bucket, True or False
@@ -26,9 +26,11 @@ textract:
 bedrock:
   region: us-east-1              # Region of Amazon Bedrock
   model_ids:                     # List of enabled Bedrock models (must be available model IDs in Bedrock console)
-    - global.anthropic.claude-sonnet-4-5-20250929-v1:0  # The first model in the list is pre-selected by default in the UI
+    - global.anthropic.claude-sonnet-4-6  # The first model in the list is pre-selected by default in the UI
+    - global.anthropic.claude-opus-4-6-v1
     - global.anthropic.claude-haiku-4-5-20251001-v1:0
-    - global.anthropic.claude-opus-4-5-20251101-v1:0
+    # - global.anthropic.claude-sonnet-4-5-20250929-v1:0
+    # - global.anthropic.claude-opus-4-5-20251101-v1:0
     # - us.anthropic.claude-3-haiku-20240307-v1:0
     # - us.anthropic.claude-3-5-haiku-20241022-v1:0
     # - us.anthropic.claude-3-sonnet-20240229-v1:0
@@ -42,7 +44,7 @@ bedrock:
     # - us.amazon.nova-micro-v1:0
     - us.amazon.nova-2-lite-v1:0
     - us.amazon.nova-pro-v1:0
-    - us.amazon.nova-premier-v1:0
+    # - us.amazon.nova-premier-v1:0
     - qwen.qwen3-vl-235b-a22b
     - nvidia.nemotron-nano-12b-v2
     # - us.amazon.nova-2-lite-v1:0

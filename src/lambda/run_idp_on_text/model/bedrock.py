@@ -16,7 +16,6 @@ def create_bedrock_client(bedrock_region, bedrock_config=None):
 def get_model_params() -> dict:
     return {
         "temperature": 0.0,  # temperature of the sampling process
-        "topP": 1,  # cumulative probability of sampled tokens
         "stopSequences": [],  # words after which the generation is stopped
         "maxTokens": 4_096,  # max tokens to be generated
     }
