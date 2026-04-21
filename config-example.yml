@@ -85,7 +85,7 @@ frontend:
   # ip_address_allowed: [pl-4e2ece27] # List of IP addresses (cidr ranges) and prefix lists allowed to access the app in the ALB Security Group. If not set, SG is open to the internet
   ecs_memory: 2_048              # Memory of the ECS instance (Mb)
   ecs_cpu: 1_024                 # CPU of ECS instance
-  cover_image_url: app/static/cover_image.jpeg  # custom cover image on app pages
+  cover_image_url: /app/static/cover_image.png  # custom cover image on app pages
   assistant_avatar: https://d1.awsstatic.com/products/bedrock/icon_64_amazonbedrock.302e08f0c3cd2a11d37eb3d77cb894bc5ceff8e4.png  # avatar of the chatbot
 
 cdk_nag: True # Enable cdk_nag check, True or False
