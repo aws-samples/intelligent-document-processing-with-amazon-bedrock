@@ -8,5 +8,5 @@ networkx
 pandas
 openpyxl
 unstructured==0.18.18
-langchain==0.3.26
+langchain==0.3.30
 langchain-community==0.3.27
