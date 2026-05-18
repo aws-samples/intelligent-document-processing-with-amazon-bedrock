@@ -107,6 +107,7 @@ def get_configuration():
 STATE_MACHINE_ARN, BUCKET_NAME = get_configuration()
 
 SUPPORTED_MODELS = [
+    "us.anthropic.claude-opus-4-7",
     "us.anthropic.claude-opus-4-6-v1",
     "us.anthropic.claude-sonnet-4-6",
     "us.anthropic.claude-opus-4-1-20250805-v1:0",

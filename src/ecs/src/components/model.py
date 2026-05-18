@@ -45,6 +45,7 @@ MODEL_IDS = {
     "Claude 4.1 Opus": "anthropic.claude-opus-4-1-20250805-v1:0",
     "Claude 4.5 Opus": "anthropic.claude-opus-4-5-20251101-v1:0",
     "Claude 4.6 Opus": "anthropic.claude-opus-4-6-v1",
+    "Claude 4.7 Opus": "anthropic.claude-opus-4-7",
     # DeepSeek Models
     "DeepSeek-R1": "deepseek.r1-v1:0",
     "DeepSeek 3.1": "deepseek.v3-v1:0",
