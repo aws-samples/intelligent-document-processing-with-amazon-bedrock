@@ -2,13 +2,9 @@
 
 🚀 Extract information from unstructured documents at scale with Amazon Bedrock
 
-🌎 Open-source asset published at [aws-samples GitHub](https://github.com/aws-samples/intelligent-document-processing-with-amazon-bedrock)
-
 ![media/diagram.png](media/diagram.png)
 
-Converting documents into structured databases is a recurring business need. Common use cases include creating product feature tables from descriptions, extracting metadata from legal contracts, and analyzing customer reviews.
-
-This repository provides an AWS CDK solution for intelligent document processing (IDP) using generative AI.
+Converting documents into structured databases is a recurring business need. Common use cases include creating product feature tables from descriptions, extracting metadata from legal contracts, and analyzing customer reviews. This repo provides an AWS CDK solution for intelligent document processing (IDP) using generative AI.
 
 ✨ **Key features:**
 - Extract structured information:
@@ -20,7 +16,7 @@ This repository provides an AWS CDK solution for intelligent document processing
 - Process PDFs, MS Office files, images, and text via [Python API](demo/idp_bedrock_demo.ipynb) or [web interface](src/ecs/src/Home.py)
 - Deploy as MCP server to equip AI agents with document processing capabilities
 
-See the **Security** section below before deployment.
+Read more in [our blog](https://aws.amazon.com/blogs/machine-learning/intelligent-document-processing-at-scale-with-generative-ai-and-amazon-bedrock-data-automation/).
 
 ## Contents
 
