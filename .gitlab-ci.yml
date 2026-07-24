@@ -5,6 +5,7 @@ stages:
 
 before_script:
   - pip install -U pip setuptools wheel
+  - pip install uv
 
 lint:
   stage: lint
