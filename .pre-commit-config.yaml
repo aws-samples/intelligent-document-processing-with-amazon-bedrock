@@ -50,3 +50,12 @@ repos:
     - id: ash
       name: scan files using ash
       stages: [ manual ]
+
+  - repo: local
+    hooks:
+      - id: uv-audit
+        name: audit dependencies for known vulnerabilities
+        entry: uv audit --preview-features audit-command
+        language: system
+        files: ^(pyproject\.toml|uv\.lock)$
+        pass_filenames: false
