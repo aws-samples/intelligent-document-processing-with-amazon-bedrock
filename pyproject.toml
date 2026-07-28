@@ -15,7 +15,7 @@ authors = [
 ]
 requires-python = ">=3.10"
 dependencies = [
-    "aws-cdk-lib==2.244.0",
+    "aws-cdk-lib==2.253.0",
     "cdk-nag==2.37.55",
     "boto3>=1.38.17",
     "constructs>=10.0.0",
